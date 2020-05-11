@@ -1,0 +1,12 @@
+gulp/access.js
+node_modules/*
+project/sprite/*
+project/dest/*
+project/release/*
+project/mail/dest/*
+*.zip
+*.rar
+*.psd
+*.sketch
+.DS_Store
+package-lock.json

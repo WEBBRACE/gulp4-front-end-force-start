@@ -1,0 +1,73 @@
+{
+  "dir": {
+    "src": "project/src",
+    "dest": "project/dest",
+    "release": "project/release",
+    "sprite": "project/sprite"
+  },
+  "files": "project/src/files/**/**/*.*",
+  "fonts": {
+    "src": "project/src/files/fonts/ttf/*.*",
+    "dest": "project/src/files/fonts"
+  },
+  "ftp": {
+    "src": "project/release/**/**/*"
+  },
+  "img": {
+    "src": [
+      "project/src/img/**/**/*.{svg,png,gif,jpg,jpeg}",
+      "project/sprite/img/**/**/*.{svg,png,gif,jpg,jpeg}",
+      "!project/src/img/sprite/**/*.*"
+    ],
+    "dest": "project/dest/img",
+    "tinyPng": {
+      "src": "project/src/img/tinypng/**/**/*.{png,jpg,jpeg}",
+      "dest": "project/src/img"
+    }
+  },
+  "sprite": {
+    "svg": "project/src/img/sprite/*.svg",
+    "png": "project/src/img/sprite/*.png",
+    "img": "project/sprite/img",
+    "style": "project/sprite/style",
+    "src": "project/src/img/sprite",
+    "dest": "project/sprite",
+    "mixin": {
+      "svg": "project/src/style/sprite/sprite-svg-mixin.scss",
+      "png": "project/src/style/sprite/sprite-png-mixin.scss",
+      "dest": "project/sprite/style/mixin"
+    }
+  },
+  "js": {
+    "src": [
+      "project/src/js/main/**/*.js",
+      "!project/src/js/main/**/_*.js"
+    ],
+    "maps": "./maps",
+    "dest": "project/dest/js"
+  },
+  "style": {
+    "src": [
+      "project/src/style/main/plugins/normalize.scss",
+      "project/sprite/style/*.scss",
+      "project/sprite/style/mixin/*.scss",
+      "project/src/style/mixin.scss",
+      "project/src/style/main/basic/fonts.scss",
+      "project/src/style/main/basic/variables.scss",
+      "project/src/style/main/basic/basic.scss",
+      "project/src/style/main/basic/animation.scss",
+      "project/src/style/main/basic/grid.scss",
+      "project/src/style/main/basic/global.scss",
+      "project/src/style/main/optional/**/*.scss",
+      "!project/src/style/main/optional/**/_*.scss"
+    ],
+    "dest": "project/dest/css"
+  },
+  "pug": {
+    "src": "project/src/pug",
+    "srcFile": [
+      "project/src/pug/*.pug",
+      "!project/src/pug/_*.pug"
+    ]
+  }
+}

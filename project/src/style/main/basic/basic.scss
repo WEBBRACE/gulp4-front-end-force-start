@@ -1,0 +1,73 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: $black;
+  background: $white;
+  min-height: 100vh;
+  font-family: $arial;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+
+  &:active,
+  &:focus,
+  &:hover,
+  &:visited {
+    text-decoration: none;
+  }
+}
+
+button,
+input,
+textarea {
+  border: 0;
+  outline: 0;
+  background: none;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 1.4;
+  font-family: $arial;
+}
+
+select {
+  font-size: 14px;
+  display: block;
+  margin-bottom: 10px;
+  width: 200px;
+}
+
+button,
+input[type='submit'] {
+  cursor: pointer;
+}
+
+i,
+b,
+strong {
+  font-weight: normal;
+}
