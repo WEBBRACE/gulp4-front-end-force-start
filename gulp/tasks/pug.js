@@ -1,8 +1,5 @@
 module.exports = (gulp, plugins, browser) => {
   const config = require('../config');
-  const formatHtml = require('gulp-format-html');
-  const htmlValidator = require('gulp-w3c-html-validator');
-  const webpHTML = require('gulp-webp-html');
   const pugInheritance = require('yellfy-pug-inheritance');
   let pugInheritanceCache = {};
 
@@ -26,12 +23,10 @@ module.exports = (gulp, plugins, browser) => {
         .pipe(plugins.if(global.watch, plugins.filter(file => pugFilter(file, inheritance))))
         .pipe(plugins.plumber())
         .pipe(plugins.pug({
-          pretty: true
+          self: true,
+          cache: true
         }))
         .on('error', plugins.notify.onError(error => `Error: ${error.message}`))
-        .pipe(htmlValidator())
-        .pipe(webpHTML())
-        .pipe(formatHtml())
         .pipe(gulp.dest(config.dir.dest))
         .on('end', resolve)
         .on('error', reject)

@@ -48,7 +48,7 @@
   },
   "style": {
     "src": [
-      "project/src/style/main/plugins/normalize.scss",
+      "project/src/style/main/plugins/*.scss",
       "project/sprite/style/*.scss",
       "project/sprite/style/mixin/*.scss",
       "project/src/style/mixin.scss",
@@ -69,5 +69,27 @@
       "project/src/pug/*.pug",
       "!project/src/pug/_*.pug"
     ]
+  },
+  "release": {
+    "html": {
+      "src": "project/dest/*.html",
+      "dest": "project/release/"
+    },
+    "js": {
+      "src": "project/dest/js/*.js",
+      "dest": "project/release/js/"
+    },
+    "style": {
+      "src": "project/dest/css/*.css",
+      "dest": "project/release/css/"
+    },
+    "img": {
+      "src": "project/dest/img/**/**/*.*",
+      "dest": "project/release/img/"
+    },
+    "files": {
+      "src": "project/src/files/**/**/*.*",
+      "dest": "project/release/"
+    }
   }
 }
