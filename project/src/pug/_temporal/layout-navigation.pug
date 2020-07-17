@@ -1,0 +1,131 @@
+//Навигация по верстке
+.layout-navigation
+	button(type="button") Навигация по верстке
+	nav
+		ul
+			li
+				a(href="#") Ссылка
+			li
+				a(href="#") Ссылка
+				ul
+					li
+						a(href="#") Ссылки
+style.
+	.layout-navigation {
+		position: fixed;
+		z-index: 9;
+		left: 0;
+		bottom: 0;
+		transition: all .2s;
+		transform: translateY(calc(100% - 40px));
+	}
+
+	@media only screen and (max-width: 991px) {
+		.layout-navigation {
+			display: none;
+		}
+	}
+
+	.layout-navigation.open {
+		transform: translateY(0px);
+	}
+
+	.layout-navigation.open button::before {
+		transform: rotateZ(-45deg);
+	}
+
+	.layout-navigation.open button::after {
+		transform: rotateZ(45deg);
+	}
+
+	.layout-navigation button {
+		position: relative;
+		width: 320px;
+		height: 40px;
+		padding: 10px 20px;
+		font-size: 14px;
+		line-height: 1.2;
+		font-weight: 600;
+		color: #fff;
+		background: #3d893f;
+		border: 1px solid #377938;
+		border-bottom: 0;
+		text-align: left;
+	}
+
+	.layout-navigation button::before {
+		position: absolute;
+		top: 13px;
+		right: 32px;
+		width: 1px;
+		height: 10px;
+		background: #fff;
+		content: '';
+		transform: rotateZ(45deg);
+	}
+
+	.layout-navigation button::after {
+		position: absolute;
+		top: 13px;
+		right: 25px;
+		width: 1px;
+		height: 10px;
+		background: #fff;
+		content: '';
+		transform: rotateZ(-45deg);
+	}
+
+	.layout-navigation nav {
+		max-height: 600px;
+		overflow-y: auto;
+		padding: 10px 20px;
+		background: #f9f9f9;
+		width: 320px;
+		border-left: 1px solid #e8e9e8;
+		border-right: 1px solid #e8e9e8;
+	}
+
+	.layout-navigation ul {
+		margin: 15px 0;
+		padding: 0 15px;
+		list-style: decimal;
+	}
+
+	.layout-navigation ul ul {
+		list-style: disc;
+	}
+
+	.layout-navigation li {
+		margin-bottom: 12px;
+	}
+
+	.layout-navigation li:last-child {
+		margin-bottom: 0;
+	}
+
+	.layout-navigation a {
+		font-size: 14px;
+		line-height: 1.2;
+		font-weight: 300;
+		color: #000;
+	}
+
+	.layout-navigation a:hover {
+		color: #da1010;
+		text-decoration: underline;
+	}
+
+script.
+	function layoutNavigation() {
+	var layoutNavigation = document.querySelector('.layout-navigation');
+
+	if (layoutNavigation) {
+		var btn = layoutNavigation.querySelector('button');
+		btn.addEventListener('click', function () {
+			layoutNavigation.classList.toggle('open');
+		});
+		}
+	}
+	document.addEventListener('DOMContentLoaded', function () {
+	layoutNavigation();
+	});

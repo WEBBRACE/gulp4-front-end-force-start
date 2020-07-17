@@ -1,6 +1,8 @@
 module.exports = (gulp, plugins, browser) => {
   const config = require('../config');
   const pugInheritance = require('yellfy-pug-inheritance');
+  const webpHTML = require('gulp-webp-html');
+  const formatHtml = require('gulp-format-html');
   let pugInheritanceCache = {};
 
   function pugFilter(file, inheritance) {
@@ -24,8 +26,11 @@ module.exports = (gulp, plugins, browser) => {
         .pipe(plugins.plumber())
         .pipe(plugins.pug({
           self: true,
-          cache: true
+          cache: true,
+          pretty: true
         }))
+        .pipe(webpHTML())
+        .pipe(formatHtml())
         .on('error', plugins.notify.onError(error => `Error: ${error.message}`))
         .pipe(gulp.dest(config.dir.dest))
         .on('end', resolve)

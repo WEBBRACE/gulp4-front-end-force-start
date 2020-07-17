@@ -1,4 +1,4 @@
-module.exports = (gulp, plugins, browser) => {
+module.exports = (gulp, plugins) => {
   const config = require('../config');
   const webpHTML = require('gulp-webp-html');
   const formatHtml = require('gulp-format-html');

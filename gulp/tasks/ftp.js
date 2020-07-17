@@ -1,4 +1,4 @@
-module.exports = gulp => {
+module.exports = (gulp) => {
   const config = require('../config');
   const ftp = require('vinyl-ftp');
 

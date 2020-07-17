@@ -32,5 +32,10 @@ module.exports = (gulp, plugins, browser) => {
       ),
     ))
     .pipe(gulp.dest(config.img.dest))
+    .pipe(gulp.src(config.img.src))
+    .pipe(plugins.webp({
+      quality: 90
+    }))
+    .pipe(gulp.dest(config.img.dest))
     .pipe(browser.stream())
 };

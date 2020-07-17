@@ -1,5 +1,6 @@
 gulp/access.js
 node_modules/*
+project/temporal/*
 project/sprite/*
 project/dest/*
 project/release/*

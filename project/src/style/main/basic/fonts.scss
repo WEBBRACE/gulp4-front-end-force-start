@@ -1,1 +1,5 @@
-// @include font('Arial', 'Arial', 'fallback', '300', 'normal');
+@include font('ProximaNova', 'ProximaNova-Light', fallback, '100', 'normal');
+@include font('ProximaNova', 'ProximaNova-Regular', fallback, '300', 'normal');
+@include font('ProximaNova', 'ProximaNova-Semibold', fallback, '400', 'normal');
+@include font('ProximaNova', 'ProximaNova-Bold', fallback, '600', 'normal');
+@include font('ProximaNova', 'ProximaNova-Extrabold', fallback, '900', 'normal');

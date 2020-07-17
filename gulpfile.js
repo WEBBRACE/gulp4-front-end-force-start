@@ -12,21 +12,33 @@ fs.readdirSync(taskFolder).forEach(file => {
   gulp.task(taskName, getTask(taskName));
 });
 
+gulp.task('dest.final', gulp.series(
+  gulp.parallel('clean'),
+  gulp.parallel('sprite'),
+  gulp.parallel('temporal.final'),
+  gulp.parallel('pug'),
+  gulp.parallel('html.final', 'js', 'style'),
+  gulp.parallel('files', 'img'),
+));
+
 gulp.task('dest', gulp.series(
   gulp.parallel('clean'),
   gulp.parallel('sprite'),
-  gulp.parallel('pug', 'files'),
+  gulp.parallel('temporal'),
+  gulp.parallel('pug'),
   gulp.parallel('js', 'style'),
-  gulp.parallel('img'),
+  gulp.parallel('files', 'img'),
 ));
 
 gulp.task('default', gulp.series(
   gulp.parallel('clean'),
   gulp.parallel('sprite'),
-  gulp.parallel('pug', 'files'),
+  gulp.parallel('temporal'),
+  gulp.parallel('pug'),
   gulp.parallel('js', 'style'),
-  gulp.parallel('img'),
+  gulp.parallel('files', 'img'),
   gulp.parallel('watch', 'server'),
 ));
 
 gulp.task('release.ftp', gulp.series('clean', 'dest', 'release', 'ftp', 'clean'));
+gulp.task('release.final', gulp.series('clean', 'dest.final', 'release', 'zip', 'clean'));

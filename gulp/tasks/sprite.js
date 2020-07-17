@@ -50,12 +50,12 @@ module.exports = (gulp, plugins, browser) => {
                     css: {
                       dest: './',
                       layout: 'diagonal',
-                      sprite: '../sprite/img/sprite.svg',
+                      sprite: '../_sprite/img/sprite.svg',
                       bust: false,
                       render: {
                         scss: {
-                          dest: '../sprite/style/sprite-svg.scss',
-                          template: './project/src/style/sprite/sprite-template.scss',
+                          dest: '../_sprite/style/sprite-svg.scss',
+                          template: './project/src/style/_sprite/sprite-template.scss',
                         },
                       },
                     },

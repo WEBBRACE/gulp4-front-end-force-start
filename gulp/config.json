@@ -1,9 +1,10 @@
 {
   "dir": {
+    "desktop": "../../",
     "src": "project/src",
     "dest": "project/dest",
     "release": "project/release",
-    "sprite": "project/sprite"
+    "sprite": "project/_sprite"
   },
   "files": "project/src/files/**/**/*.*",
   "fonts": {
@@ -13,11 +14,14 @@
   "ftp": {
     "src": "project/release/**/**/*"
   },
+  "zip": {
+    "src": "project/release/**/**/*"
+  },
   "img": {
     "src": [
       "project/src/img/**/**/*.{svg,png,gif,jpg,jpeg}",
-      "project/sprite/img/**/**/*.{svg,png,gif,jpg,jpeg}",
-      "!project/src/img/sprite/**/*.*"
+      "project/_sprite/img/**/**/*.{svg,png,gif,jpg,jpeg}",
+      "!project/src/img/_sprite/**/*.*"
     ],
     "dest": "project/dest/img",
     "tinyPng": {
@@ -26,16 +30,16 @@
     }
   },
   "sprite": {
-    "svg": "project/src/img/sprite/*.svg",
-    "png": "project/src/img/sprite/*.png",
-    "img": "project/sprite/img",
-    "style": "project/sprite/style",
-    "src": "project/src/img/sprite",
-    "dest": "project/sprite",
+    "svg": "project/src/img/_sprite/*.svg",
+    "png": "project/src/img/_sprite/*.png",
+    "img": "project/_sprite/img",
+    "style": "project/_sprite/style",
+    "src": "project/src/img/_sprite",
+    "dest": "project/_sprite",
     "mixin": {
-      "svg": "project/src/style/sprite/sprite-svg-mixin.scss",
-      "png": "project/src/style/sprite/sprite-png-mixin.scss",
-      "dest": "project/sprite/style/mixin"
+      "svg": "project/src/style/_sprite/sprite-svg-mixin.scss",
+      "png": "project/src/style/_sprite/sprite-png-mixin.scss",
+      "dest": "project/_sprite/style/mixin"
     }
   },
   "js": {
@@ -43,20 +47,18 @@
       "project/src/js/main/**/*.js",
       "!project/src/js/main/**/_*.js"
     ],
-    "maps": "./maps",
     "dest": "project/dest/js"
   },
   "style": {
     "src": [
       "project/src/style/main/plugins/*.scss",
-      "project/sprite/style/*.scss",
-      "project/sprite/style/mixin/*.scss",
+      "project/_sprite/style/*.scss",
+      "project/_sprite/style/mixin/*.scss",
       "project/src/style/mixin.scss",
       "project/src/style/main/basic/fonts.scss",
       "project/src/style/main/basic/variables.scss",
       "project/src/style/main/basic/basic.scss",
       "project/src/style/main/basic/animation.scss",
-      "project/src/style/main/basic/grid.scss",
       "project/src/style/main/basic/global.scss",
       "project/src/style/main/optional/**/*.scss",
       "!project/src/style/main/optional/**/_*.scss"
@@ -69,6 +71,12 @@
       "project/src/pug/*.pug",
       "!project/src/pug/_*.pug"
     ]
+  },
+  "temporal": {
+    "pug": {
+      "src": "project/src/pug/_temporal/*.pug",
+      "dest": "project/_temporal"
+    }
   },
   "release": {
     "html": {
