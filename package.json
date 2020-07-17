@@ -1,7 +1,7 @@
 {
-  "name": "gulp4-front-end",
-  "version": "3.0.0",
-  "description": "Easy front-end gulp start",
+  "name": "gulp4-front-end-force-start",
+  "version": "5.0.0",
+  "description": "Стартовая front-end сборка Gulp4 с использованием препроцессора PUG и SCSS.",
   "repository": {
     "type": "git",
     "url": "https://github.com/WEBBRACE/gulp4-front-end-force-start.git"
@@ -41,6 +41,7 @@
     "gulp-pug": "^4.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
+    "gulp-scriptcss": "^1.5.1",
     "gulp-shorthand": "^1.1.0",
     "gulp-svg-sprite": "^1.5.0",
     "gulp-tinypng-compress": "^1.2.1",

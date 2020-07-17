@@ -1,10 +1,9 @@
 gulp/access.js
 node_modules/*
-project/temporal/*
-project/sprite/*
+project/_temporal/*
+project/_sprite/*
 project/dest/*
 project/release/*
-project/mail/dest/*
 *.zip
 *.rar
 *.psd
