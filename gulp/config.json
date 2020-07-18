@@ -43,34 +43,55 @@
     }
   },
   "inject": {
-    "src": [
-      "project/dest/js/*.js",
-      "project/dest/css/*.css"
-    ],
+    "src": {
+      "main": [
+        "project/dest/js/*.js",
+        "project/dest/css/*.css"
+      ],
+      "plugins": [
+        "project/dest/js/plugins/*.js",
+        "project/dest/css/plugins/*.css"
+      ],
+      "pluginsHead": [
+        "project/dest/js/plugins/head/*.js",
+        "project/dest/css/plugins/head/*.css"
+      ]
+    },
     "remove": "../../dest/"
   },
   "js": {
-    "src": [
-      "project/src/js/main/**/*.js",
-      "!project/src/js/main/**/_*.js"
-    ],
-    "dest": "project/dest/js"
+    "src": {
+      "main": [
+        "project/src/js/main/**/*.js",
+        "!project/src/js/main/**/_*.js"
+      ],
+      "plugins": "project/src/js/plugins/**/*.js"
+    },
+    "dest": {
+      "main": "project/dest/js",
+      "plugins": "project/dest/js/plugins"
+    }
   },
   "style": {
-    "src": [
-      "project/src/style/main/plugins/*.scss",
-      "project/_sprite/style/*.scss",
-      "project/_sprite/style/mixin/*.scss",
-      "project/src/style/mixin.scss",
-      "project/src/style/main/basic/fonts.scss",
-      "project/src/style/main/basic/variables.scss",
-      "project/src/style/main/basic/basic.scss",
-      "project/src/style/main/basic/animation.scss",
-      "project/src/style/main/basic/global.scss",
-      "project/src/style/main/optional/**/*.scss",
-      "!project/src/style/main/optional/**/_*.scss"
-    ],
-    "dest": "project/dest/css"
+    "src": {
+      "main": [
+        "project/_sprite/style/*.scss",
+        "project/_sprite/style/mixin/*.scss",
+        "project/src/style/mixin.scss",
+        "project/src/style/main/basic/fonts.scss",
+        "project/src/style/main/basic/variables.scss",
+        "project/src/style/main/basic/basic.scss",
+        "project/src/style/main/basic/animation.scss",
+        "project/src/style/main/basic/global.scss",
+        "project/src/style/main/optional/**/*.scss",
+        "!project/src/style/main/optional/**/_*.scss"
+      ],
+      "plugins": "project/src/style/plugins/**/*.scss"
+    },
+    "dest": {
+      "main": "project/dest/css",
+      "plugins": "project/dest/css/plugins"
+    }
   },
   "pug": {
     "src": "project/src/pug",
@@ -91,11 +112,11 @@
       "dest": "project/release/"
     },
     "js": {
-      "src": "project/dest/js/*.js",
+      "src": "project/dest/js/**/**/*.js",
       "dest": "project/release/js/"
     },
     "style": {
-      "src": "project/dest/css/*.css",
+      "src": "project/dest/css/**/**/*.css",
       "dest": "project/release/css/"
     },
     "img": {

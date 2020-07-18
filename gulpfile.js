@@ -16,28 +16,28 @@ gulp.task('dest.final', gulp.series(
   gulp.parallel('clean'),
   gulp.parallel('sprite'),
   gulp.parallel('js', 'style'),
+  gulp.parallel('files', 'img'),
   gulp.parallel('temporal.final'),
   gulp.parallel('pug'),
   gulp.parallel('html.final'),
-  gulp.parallel('files', 'img'),
 ));
 
 gulp.task('dest', gulp.series(
   gulp.parallel('clean'),
   gulp.parallel('sprite'),
   gulp.parallel('js', 'style'),
+  gulp.parallel('files', 'img'),
   gulp.parallel('temporal'),
   gulp.parallel('pug'),
-  gulp.parallel('files', 'img'),
 ));
 
 gulp.task('default', gulp.series(
   gulp.parallel('clean'),
   gulp.parallel('sprite'),
   gulp.parallel('js', 'style'),
+  gulp.parallel('files', 'img'),
   gulp.parallel('temporal'),
   gulp.parallel('pug'),
-  gulp.parallel('files', 'img'),
   gulp.parallel('watch', 'server'),
 ));
 

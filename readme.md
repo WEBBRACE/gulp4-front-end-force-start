@@ -1,5 +1,5 @@
 # Стартовая front-end сборка GULP - WEBBRACE.RU
-`Версия 5.0`
+`Версия 5.0.2`
 
 Инкрементальная сборка Gulp4 с использованием препроцессора PUG и SCSS.
 Используется MIXIN: БЭМ/SVG Sprite/PNG Sprite/Media inquiries/Fonts SCSS

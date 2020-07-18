@@ -29,7 +29,9 @@ module.exports = (gulp, plugins, browser) => {
           cache: true,
           pretty: true
         }))
-        .pipe(plugins.inject(gulp.src(config.inject.src, { read: false }), { ignorePath: config.inject.remove, relative: true }))
+        .pipe(plugins.inject(gulp.src(config.inject.src.pluginsHead, { read: false }), { ignorePath: config.inject.remove, relative: true, starttag: '<!-- inject:pluginsHead:{{ext}} -->' }))
+        .pipe(plugins.inject(gulp.src(config.inject.src.plugins, { read: false }), { ignorePath: config.inject.remove, relative: true, starttag: '<!-- inject:plugins:{{ext}} -->' }))
+        .pipe(plugins.inject(gulp.src(config.inject.src.main, { read: false }), { ignorePath: config.inject.remove, relative: true }))
         .pipe(webpHTML())
         .pipe(formatHtml())
         .on('error', plugins.notify.onError(error => `Error: ${error.message}`))

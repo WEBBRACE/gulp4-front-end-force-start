@@ -6,7 +6,11 @@ module.exports = (gulp, plugins) => {
 
   return () => gulp
     .src(config.pug.srcFile)
-    .pipe(plugins.pug())
+    .pipe(plugins.pug({
+      self: true,
+      cache: true,
+      pretty: true
+    }))
     .pipe(webpHTML())
     .pipe(formatHtml())
     .pipe(htmlValidator())
