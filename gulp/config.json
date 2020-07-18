@@ -42,6 +42,13 @@
       "dest": "project/_sprite/style/mixin"
     }
   },
+  "inject": {
+    "src": [
+      "project/dest/js/*.js",
+      "project/dest/css/*.css"
+    ],
+    "remove": "../../dest/"
+  },
   "js": {
     "src": [
       "project/src/js/main/**/*.js",

@@ -15,27 +15,28 @@ fs.readdirSync(taskFolder).forEach(file => {
 gulp.task('dest.final', gulp.series(
   gulp.parallel('clean'),
   gulp.parallel('sprite'),
+  gulp.parallel('js', 'style'),
   gulp.parallel('temporal.final'),
   gulp.parallel('pug'),
-  gulp.parallel('html.final', 'js', 'style'),
+  gulp.parallel('html.final'),
   gulp.parallel('files', 'img'),
 ));
 
 gulp.task('dest', gulp.series(
   gulp.parallel('clean'),
   gulp.parallel('sprite'),
+  gulp.parallel('js', 'style'),
   gulp.parallel('temporal'),
   gulp.parallel('pug'),
-  gulp.parallel('js', 'style'),
   gulp.parallel('files', 'img'),
 ));
 
 gulp.task('default', gulp.series(
   gulp.parallel('clean'),
   gulp.parallel('sprite'),
+  gulp.parallel('js', 'style'),
   gulp.parallel('temporal'),
   gulp.parallel('pug'),
-  gulp.parallel('js', 'style'),
   gulp.parallel('files', 'img'),
   gulp.parallel('watch', 'server'),
 ));
