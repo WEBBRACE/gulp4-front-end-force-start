@@ -8,8 +8,10 @@
   },
   "files": "project/src/files/**/**/*.*",
   "fonts": {
-    "src": "project/src/files/fonts/ttf/*.*",
-    "dest": "project/src/files/fonts"
+    "convert": {
+      "src": "project/src/files/fonts/ttf/*.ttf",
+      "dest": "project/src/files/fonts"
+    }
   },
   "ftp": {
     "src": "project/release/**/**/*"

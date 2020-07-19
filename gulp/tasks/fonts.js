@@ -1,12 +1,14 @@
-module.exports = (gulp, plugins, browser) => {
+module.exports = (gulp, plugins) => {
   const config = require('../config');
 
-  return () => gulp
-    .src(config.fonts.src)
-    .pipe(plugins.ttf2woff())
-    .pipe(gulp.dest(config.fonts.dest))
-    .pipe(gulp.src(config.fonts.src))
-    .pipe(plugins.ttf2woff2())
-    .pipe(gulp.dest(config.fonts.dest))
-    .pipe(browser.stream())
+  return () => plugins.all(
+    gulp
+      .src(config.fonts.convert.src)
+      .pipe(plugins.ttf2woff())
+      .pipe(gulp.dest(config.fonts.convert.dest)),
+    gulp
+      .src(config.fonts.convert.src)
+      .pipe(plugins.ttf2woff2())
+      .pipe(gulp.dest(config.fonts.convert.dest))
+  )
 };

@@ -1,6 +1,6 @@
 {
   "name": "gulp4-front-end-force-start",
-  "version": "5.0.2",
+  "version": "5.0.3",
   "description": "Стартовая front-end сборка Gulp4 с использованием препроцессора PUG и SCSS.",
   "repository": {
     "type": "git",
